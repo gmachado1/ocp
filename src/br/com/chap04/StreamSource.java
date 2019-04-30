@@ -41,7 +41,12 @@ public class StreamSource {
 			Optional<String> min = s.min((s1, s2) -> s1.length() - s2.length());
 			min.ifPresent(System.out::println);
 		}
-		
+		{
+			Stream<String> s = Stream.of("monkey", "gorilla", "bonobo");
+			Stream<String> infinite = Stream.generate(() -> "chimp");
+			s.findAny().ifPresent(System.out::println); // monkey
+			infinite.findAny().ifPresent(System.out::println); // chimp
+		}
 
 	}
 
