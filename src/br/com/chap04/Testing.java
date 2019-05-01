@@ -20,6 +20,7 @@ public class Testing {
 
 	public static void main(String args[]) {
 		System.out.println("Hello Word!");
+		
 		{
 			Supplier<LocalDate> s1 = LocalDate::now;
 			Supplier<LocalDate> s2 = () -> LocalDate.now();

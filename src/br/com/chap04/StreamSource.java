@@ -189,6 +189,7 @@ public class StreamSource {
 			letters.add('a');
 			Stream<List<?>> stream = Stream.of(numbers, letters);
 			stream.map(List::size).forEach(System.out::println); // 11
+		
 			
 			System.out.println("\n  PEEK ");
 			StringBuilder builder = new StringBuilder();

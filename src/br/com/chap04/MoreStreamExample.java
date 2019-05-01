@@ -129,6 +129,7 @@ public class MoreStreamExample {
 		}
 		{
 			System.out.println("LongSummaryStatistics");
+			
 			LongSummaryStatistics longs = LongStream.of(3, 5, 10).summaryStatistics();
 			long sum = longs.getSum();
 			System.out.println(sum); // 15
