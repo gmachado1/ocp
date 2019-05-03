@@ -18,6 +18,42 @@ public class MoreStreamExample {
 
 	public static void main(String args[]) {
 		{
+			System.out.println("REDUCE");
+			Stream<Integer> stream = Stream.of(1, 2, 3);
+			System.out.println(stream.reduce(0, (s, n) -> s + n));
+		}
+		{
+			System.out.println(" - OU - ");
+			Stream<Integer> stream = Stream.of(1, 2, 3);
+			System.out.println(stream.mapToInt(x -> x).sum());
+		}
+		System.out.println("\n\n");
+		{
+			System.out.println("AVARAGE");
+			IntStream intStream = IntStream.of(1, 2, 3);
+			OptionalDouble avg = intStream.average();
+			System.out.println(avg.getAsDouble());
+			System.out.println("\n\n");
+		}
+		{
+			System.out.println("\n\n");
+			DoubleStream oneValue = DoubleStream.of(3.14);
+			DoubleStream varargs = DoubleStream.of(1.0, 1.1, 1.2);
+			oneValue.forEach(System.out::println);
+			System.out.println();
+			varargs.forEach(System.out::println);
+			System.out.println("\n\n");
+		}
+		{
+			System.out.println("\n\n");
+			DoubleStream oneValue = DoubleStream.of(3.14);
+			DoubleStream varargs = DoubleStream.of(1.0, 1.1, 1.2);
+			oneValue.forEach(System.out::println);
+			System.out.println();
+			varargs.forEach(System.out::println);
+			System.out.println("\n\n");
+		}
+		{
 			List<String> list = Arrays.asList("Toby", "Anna", "Leroy", "Alex");
 			List<String> filtered = new ArrayList<>();
 			for (String name : list) {
@@ -129,7 +165,7 @@ public class MoreStreamExample {
 		}
 		{
 			System.out.println("LongSummaryStatistics");
-			
+
 			LongSummaryStatistics longs = LongStream.of(3, 5, 10).summaryStatistics();
 			long sum = longs.getSum();
 			System.out.println(sum); // 15

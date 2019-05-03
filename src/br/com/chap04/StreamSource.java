@@ -115,6 +115,12 @@ public class StreamSource {
 			threeElements.reduce(op).ifPresent(System.out::print); // 90
 		}
 		{
+			System.out.println("\n\n\nBinaryOperator - REDUCE");
+			BinaryOperator<Integer> op = (a, b) -> a * b;
+			Stream<Integer> stream = Stream.of(3, 5, 6);
+			System.out.println(stream.reduce(1, op, op)); // 90
+		}
+		{
 			System.out.println("\nCollect - stringBuider");
 			Stream<String> stream = Stream.of("w", "o", "l", "f");
 			StringBuilder word = stream.collect(StringBuilder::new, StringBuilder::append, StringBuilder::append);
@@ -173,6 +179,8 @@ public class StreamSource {
 			s.sorted().forEach(System.out::println); // bear-brown-
 
 			Stream<String> s1 = Stream.of("brown bear-", "grizzly-");
+			// s1.sorted(Comparator.reverseOrder()).forEach(System.out::print); //
+			// grizzly-brown bear-
 			s1.sorted(Comparator.reverseOrder()).forEach(System.out::print); // grizzly-brown bear-
 		}
 		{
@@ -182,16 +190,15 @@ public class StreamSource {
 			System.out.println(count); // 1
 		}
 		{
-			System.out.println("\n  MAP ");
+			System.out.println("\n  MAP  - stream.map(List::size");
 			List<Integer> numbers = new ArrayList<>();
 			List<Character> letters = new ArrayList<>();
 			numbers.add(1);
 			letters.add('a');
 			Stream<List<?>> stream = Stream.of(numbers, letters);
 			stream.map(List::size).forEach(System.out::println); // 11
-		
-			
-			System.out.println("\n  PEEK ");
+
+			System.out.println("\n  PEEK  - good.peek");
 			StringBuilder builder = new StringBuilder();
 			Stream<List<?>> good = Stream.of(numbers, letters);
 			good.peek(l -> builder.append(l)).map(List::size).forEach(System.out::println); // 11

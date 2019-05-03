@@ -19,8 +19,7 @@ import java.util.function.UnaryOperator;
 public class Testing {
 
 	public static void main(String args[]) {
-		System.out.println("Hello Word!");
-		
+
 		{
 			Supplier<LocalDate> s1 = LocalDate::now;
 			Supplier<LocalDate> s2 = () -> LocalDate.now();
@@ -34,7 +33,10 @@ public class Testing {
 			System.out.println(d1);
 			System.out.println(d2);
 		}
-
+		String test = "";
+		test.isEmpty();
+		Object o = new Object();
+		//o.i
 		{
 			Supplier<ArrayList<String>> s1 = ArrayList<String>::new;
 			ArrayList<String> a1 = s1.get();

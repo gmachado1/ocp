@@ -34,13 +34,18 @@ public class AdvancedStreamPipeline {
 			System.out.println(result); // 5.333333333333333
 		}
 		{
+			System.out.println("\n\n ####TREESET");
+			Stream<String> stream = Stream.of("w", "o", "l", "f");
+			TreeSet<String> set = stream.collect(TreeSet::new, TreeSet::add, TreeSet::addAll);
+			System.out.println(set); // [f, l, o, w]
+		}
+		{
 			// TODO vver pq não funciona
-			Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
-			// TreeSet<String> result = ohMy.filter(s ->
-			// s.startsWith("t").collect(Collectors.toSet(TreeSet::new));
-			// TreeSet<String> result = ohMy.filter(s
-			// ->s.startsWith("t").collect(Collectors.toCollection(TreeSet::new)));
-			// System.out.println(result); // [tigers]
+//			Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
+//			 TreeSet<String> result = ohMy.filter(s ->
+//			 s.startsWith("t").collect(Collectors.toSet(TreeSet::new));
+//			 TreeSet<String> result = ohMy.filter(s->s.startsWith("t").collect(Collectors.toCollection(TreeSet::new)));
+//			 System.out.println(result); // [tigers]
 		}
 		{
 			Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
@@ -98,16 +103,16 @@ public class AdvancedStreamPipeline {
 			System.out.println(map);// {false=[], true=[lions, tigers, bears]}
 		}
 		{
-			Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
-			Map<Integer, Optional<Character>> map = ohMy.collect(Collectors.groupingBy(String::length,
-					Collectors.mapping(s -> s.charAt(0), Collectors.minBy(Comparator.naturalOrder()))));
-			System.out.println(map); // {5=Optional[b], 6=Optional[t]}
+//			Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
+//			Map<Integer, Optional<Character>> map = ohMy.collect(Collectors.groupingBy(String::length,
+//					Collectors.mapping(s -> s.charAt(0), Collectors.minBy(Comparator.naturalOrder()))));
+//			System.out.println(map); // {5=Optional[b], 6=Optional[t]}
 		}
 		{
-			Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
-			Map<Integer, Optional<Character>> map = ohMy
-					.collect(groupingBy(String::length, mapping(s -> s.charAt(0), minBy(Comparator.naturalOrder()))));
-			System.out.println(map); // {5=Optional[b], 6=Optional[t]}
+//			Stream<String> ohMy = Stream.of("lions", "tigers", "bears");
+//			Map<Integer, Optional<Character>> map = ohMy
+//					.collect(groupingBy(String::length, mapping(s -> s.charAt(0), minBy(Comparator.naturalOrder()))));
+//			System.out.println(map); // {5=Optional[b], 6=Optional[t]}
 		}
 	}
 
