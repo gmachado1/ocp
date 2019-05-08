@@ -3,7 +3,9 @@ package br.com.conccurency;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.ConcurrentModificationException;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
@@ -17,6 +19,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Stream;
 
 public class ThreadExampleCode {
 
@@ -75,5 +78,45 @@ public class ThreadExampleCode {
 					System.out.print(data + ">>");
 			}
 		}
+		{
+			Map<String, Object> foodData = new HashMap<String, Object>();
+			foodData.put("penguin", 1);
+			foodData.put("flamingo", 2);
+			Map<String, Object> synchronizedFoodData = Collections.synchronizedMap(foodData);
+			try {
+				for (String key : synchronizedFoodData.keySet())
+					synchronizedFoodData.remove(key);
+			} catch (ConcurrentModificationException e) {
+				System.out.println(
+						"Unlike the concurrent collections, the synchronized collections also throw an exception\r\n"
+								+ "if they are modifi ed within an iterator by a single thread.");
+				e.printStackTrace();
+			}
+		}
+
+		{
+			Stream<Integer> stream = Arrays.asList(1, 2, 3, 4, 5, 6).stream();
+			Stream<Integer> parallelStream = stream.parallel();
+			/**
+			 * parallel() on an existing stream to convert it to one that supports
+			 * multi-threaded processing, Be aware that parallel() is an intermediate
+			 * operation that operates on the original stream.
+			 **/
+		}
+		{
+			Stream<Integer> parallelStream2 = Arrays.asList(1, 2, 3, 4, 5, 6).parallelStream();
+		}
+		{
+			Arrays.asList(1, 2, 3, 4, 5, 6).stream().forEach(s -> System.out.print(s + " "));
+			System.out.println("\nParalelo");
+			Arrays.asList(1, 2, 3, 4, 5, 6).parallelStream().forEach(s -> System.out.print(s + " "));
+			/**
+			 * Streams API includes an alternate version of the forEach() operation called
+			 * forEachOrdered(), which forces a parallel stream to process the results in
+			 * order at the cost of performance
+			 */
+			Arrays.asList(1, 2, 3, 4, 5, 6).parallelStream().forEachOrdered(s -> System.out.print(s + " "));
+		}
+
 	}
 }
