@@ -12,8 +12,8 @@ public class MarkExample {
 
 		{
 
-			File parent = new File("C:\\\\Users\\\\gustavo\\\\projetos\\\\java\\\\eclipse-workspace\\\\");
-			File child = new File(parent, "JavaCertificationProfessionalProgrammer\\\\teste.txt");
+			File parent = new File("/home/gustavo/git/ocp/");
+			File child = new File(parent, "teste.txt");
 			try {
 				InputStream is = new FileInputStream(child);
 				//BufferedInputStream  is = new BufferedInputStream(new FileInputStream(child));

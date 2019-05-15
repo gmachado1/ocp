@@ -5,7 +5,7 @@ import java.io.File;
 public class ReadFileInformation {
 	public static void main(String[] args) {
 		{
-			String pathText = "C:\\Users\\gustavo\\projetos\\java\\eclipse-workspace\\JavaCertificationProfessionalProgrammer\\zoo.txt";
+			String pathText = "/home/gustavo/git/ocp/zoo.txt";
 			File file = new File(pathText);
 			System.out.println("File Exists: " + file.exists());
 			if (file.exists()) {
