@@ -7,13 +7,13 @@ public class FileSample {
 		{
 			File fileL = new File("/home/gus/data/zoo.txt");
 			File fileW = new File(
-					"C:\\Users\\gustavo\\projetos\\java\\eclipse-workspace\\JavaCertificationProfessionalProgrammer\\zoo.txt");
+					"/home/gustavo/git/ocp/zoo.txt");
 			System.out.println(fileL.exists());
 			System.out.println(fileW.exists());
 		}
 		{
-			File parent = new File("C:\\\\Users\\\\gustavo\\\\projetos\\\\java\\\\eclipse-workspace\\\\");
-			File child = new File(parent, "JavaCertificationProfessionalProgrammer\\\\zoo.txt");
+			File parent = new File("/home/gustavo/git/ocp/");
+			File child = new File(parent, "/home/gustavo/git/ocp/zoo.txt");
 			System.out.println(child.exists());
 		}
 

@@ -5,7 +5,7 @@ import java.io.*;
 public class CopySampleFile {
 
 	public static void main(String[] args) throws IOException {
-		File dir = new File("C:\\\\Users\\\\gustavo\\\\projetos\\\\java\\\\eclipse-workspace\\\\JavaCertificationProfessionalProgrammer\\\\\\\\");
+		File dir = new File("/home/gustavo/git/ocp/");
 		File source = new File(dir,"teste.txt");
 		File destination = new File(dir, "testeCopia.txt");
 		copy(source, destination);
