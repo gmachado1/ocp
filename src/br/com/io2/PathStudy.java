@@ -185,7 +185,8 @@ public class PathStudy {
 			}
 		}
 		{
-			
+			Path file = new java.io.File("ocp/zoo/mammals/wolf.txt").toPath();
+			System.out.println(file.isAbsolute());
 		}
 
 	}
