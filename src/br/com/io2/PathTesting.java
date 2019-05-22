@@ -12,8 +12,8 @@ public class PathTesting {
 			System.out.println(LINE);
 
 			try {
-				System.out.println(Files.isSameFile(Paths.get("/user/home/cobra"), Paths.get("/user/home/snake")));
-				System.out.println(Files.isSameFile(Paths.get("/user/tree/../monkey"), Paths.get("/user/monkey")));
+				System.out.println(Files.isSameFile(Paths.get("resources/teste.lnk"), Paths.get("teste.txt")));
+				System.out.println(Files.isSameFile(Paths.get("../monkey"), Paths.get("/user/monkey")));
 				System.out.println(
 						Files.isSameFile(Paths.get("/leaves/./giraffe.exe"), Paths.get("/leaves/giraffe.exe")));
 				System.out
