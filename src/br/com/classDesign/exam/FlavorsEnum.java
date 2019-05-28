@@ -6,6 +6,6 @@ public class FlavorsEnum {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(Flavors.VANILLA.ordinal());
+		System.out.println(Flavors.CHOCOLATE.ordinal());
 	}
 }
