@@ -1,4 +1,4 @@
-package br.com.genericsAndCollections;
+package br.com.genericsAndCollections.comparable;
 
 import java.util.*;
 import java.util.function.BiFunction;
@@ -14,6 +14,7 @@ public class SortRabbits {
 			rabbits.add(new Rabbit());
 			Comparator<Rabbit> c = (r1, r2) -> r1.id - r2.id;
 			Collections.sort(rabbits, c);
+			System.out.println("page 151");
 		}
 		{
 			List<String> list = new ArrayList<String>();
@@ -39,20 +40,7 @@ public class SortRabbits {
 			// ou
 			cats.forEach(System.out::print);
 		}
-		{
-			System.out.println("\n MAPS");
-			Map<String, String> favorites = new HashMap<>();
-			favorites.put("Jenny", "Bus Tour");
-			favorites.put("Jenny", "Tram");
-			System.out.println(favorites); // {Jenny=Tram}
-
-			favorites.put("Tom", null);
-			System.out.println(favorites);
-			favorites.putIfAbsent("Jenny", "Tram");
-			favorites.putIfAbsent("Sam", "Tram");
-			favorites.putIfAbsent("Tom", "Tram");
-			System.out.println(favorites); // {Tom=Tram, Jenny=Bus Tour, Sam=Tram}
-		}
+		
 		{
 			System.out.println("\n\n BiFunction");
 			BiFunction<String, String, String> mapper = (v1, v2) -> v1.length() > v2.length() ? v1 : v2;

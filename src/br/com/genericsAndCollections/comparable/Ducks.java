@@ -1,12 +1,12 @@
-package br.com.genericsAndCollections;
+package br.com.genericsAndCollections.comparable;
 
 import java.util.*;
 
-public class DucksComparable implements Comparable<DucksComparable> {
+public class Ducks implements Comparable<Ducks> {
 
 	private String name;
 
-	public DucksComparable(String name) {
+	public Ducks(String name) {
 		this.name = name;
 	}
 
@@ -14,14 +14,14 @@ public class DucksComparable implements Comparable<DucksComparable> {
 		return name;
 	}
 
-	public int compareTo(DucksComparable d) {
+	public int compareTo(Ducks d) {
 		return name.compareTo(d.name); // call String's compareTo
 	}
 
 	public static void main(String[] args) {
-		List<DucksComparable> ducks = new ArrayList<>();
-		ducks.add(new DucksComparable("Quack"));
-		ducks.add(new DucksComparable("Puddles"));
+		List<Ducks> ducks = new ArrayList<>();
+		ducks.add(new Ducks("Quack"));
+		ducks.add(new Ducks("Puddles"));
 		Collections.sort(ducks); // sort by name
 		System.out.println(ducks); // [Puddles, Quack]
 	}
