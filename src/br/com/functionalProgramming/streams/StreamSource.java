@@ -1,4 +1,4 @@
-package br.com.functionalProgramming;
+package br.com.functionalProgramming.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,18 +42,20 @@ public class StreamSource {
 			System.out.println();
 
 			Stream<String> s = Stream.of("monkey", "gorilla", "bonobo", "xita");
-			// System.out.println(s.count()); // SE DESCOMENTAR DA ERRO
+			System.out.println(s.count());
 			// java.lang.IllegalStateException: stream has already been operated upon or
 			// closed
+			s = Stream.of("monkey", "gorilla", "bonobo", "xita");
 			Optional<String> min = s.min((s1, s2) -> s1.length() - s2.length());
 			min.ifPresent(System.out::println);
 		}
 		{
-			System.out.println("\n\ninfinite\n\n");
+			System.out.println("\n\ninfinite");
 			Stream<String> s = Stream.of("bonobo", "gorilla", "monkey");
 			Stream<String> infinite = Stream.generate(() -> "chimp");
 			s.findAny().ifPresent(System.out::println); // monkey
 			infinite.findAny().ifPresent(System.out::println); // chimp
+
 		}
 		{
 			System.out.println("\nInfinite + predicate\n\n");
@@ -92,7 +94,7 @@ public class StreamSource {
 			System.out.println(word1); // wolf
 
 			Stream<Integer> stream2 = Stream.of(3, 5, 6);
-			System.out.println(stream2.reduce(1, (a, b) -> a * b));
+			System.out.println(stream2.reduce(1, (a, b) -> a * b));//90
 		}
 		{
 			System.out.println("  - - REDUCE - - ");
@@ -120,6 +122,7 @@ public class StreamSource {
 			Stream<Integer> stream = Stream.of(3, 5, 6);
 			System.out.println(stream.reduce(1, op, op)); // 90
 		}
+		
 		{
 			System.out.println("\nCollect - stringBuider");
 			Stream<String> stream = Stream.of("w", "o", "l", "f");
@@ -157,7 +160,7 @@ public class StreamSource {
 		{
 			System.out.println("\nlimit skip");
 			Stream<Integer> s = Stream.iterate(1, n -> n + 1);
-			s.skip(5).limit(2).forEach(System.out::println); // 67
+			s.skip(5).limit(4).forEach(System.out::println); // 67
 		}
 		{
 			System.out.println("  MAP ");
@@ -204,6 +207,8 @@ public class StreamSource {
 			good.peek(l -> builder.append(l)).map(List::size).forEach(System.out::println); // 11
 			System.out.println(builder); // [1][a]
 		}
+		System.out.println("fim");
+		System.exit(0);
 
 	}
 

@@ -1,4 +1,4 @@
-package br.com.functionalProgramming;
+package br.com.functionalProgramming.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;

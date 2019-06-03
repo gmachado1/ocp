@@ -1,6 +1,7 @@
-package br.com.functionalProgramming;
+package br.com.functionalProgramming.functionalInterface;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.function.Supplier;
 
 public class SupplierTesting {
@@ -16,7 +17,11 @@ public class SupplierTesting {
 		}
 		//Implementing Consumer and BiConsumer
 		{
-			
+			System.out.println("--------------------");
+			Supplier<ArrayList<String>> s1 = ArrayList<String>::new;
+			ArrayList<String> a1 = s1.get();
+			System.out.println(a1);	
+			System.out.println(s1);
 		}
 
 	}
