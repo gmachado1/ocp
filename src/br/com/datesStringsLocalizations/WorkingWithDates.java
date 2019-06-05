@@ -16,10 +16,10 @@ public class WorkingWithDates {
 
 	public static void main(String[] args) throws InterruptedException {
 		{
-			System.out.println(LocalDate.now());
-			System.out.println(LocalTime.now());
-			System.out.println(LocalDateTime.now());
-			System.out.println(ZonedDateTime.now());
+			System.out.println(LocalDate.now());// 2019-06-05
+			System.out.println(LocalTime.now());// 08:32:54.449
+			System.out.println(LocalDateTime.now());// 2019-06-05T08:32:54.449
+			System.out.println(ZonedDateTime.now());// 2019-06-05T08:32:54.450-03:00[America/Sao_Paulo]
 		}
 		{
 			LocalDate date1 = LocalDate.of(2015, Month.JANUARY, 20);

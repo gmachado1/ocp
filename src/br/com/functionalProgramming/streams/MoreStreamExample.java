@@ -161,7 +161,7 @@ public class MoreStreamExample {
 			System.out.println(longs.average());
 			longs = LongStream.of(3, 5, 10);
 			DoubleStream doubles = DoubleStream.generate(() -> Math.PI);
-			OptionalDouble min = doubles.min(); // runs infinitely
+			//OptionalDouble min = doubles.min(); // runs infinitely
 		}
 		{
 			System.out.println("LongSummaryStatistics");
@@ -172,7 +172,17 @@ public class MoreStreamExample {
 			System.out.println(longs.getMax());
 			System.out.println(longs.getAverage());
 			DoubleStream doubles = DoubleStream.generate(() -> Math.PI);
-			OptionalDouble min = doubles.min(); // runs infinitely
+			//OptionalDouble min = doubles.min(); // runs infinitely
+		}
+		{
+			System.out.println("\n\n\nList to Stream ");
+			List<String> cats = new ArrayList<>();
+			cats.add("Annie");
+			cats.add("Ripley");
+			Stream<String> stream = cats.stream();
+			cats.add("KC");
+			System.out.println("Stream >> "+stream.count());
+			System.out.println("list >>"+ cats.size());
 		}
 	}
 

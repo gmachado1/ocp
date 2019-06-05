@@ -11,6 +11,7 @@ import java.time.temporal.UnsupportedTemporalTypeException;
 import java.util.Locale;
 
 public class FormatNumbers {
+	
 	public static void main(String[] args) {
 		{
 			int attendeesPerYear = 3_200_000;
@@ -31,11 +32,12 @@ public class FormatNumbers {
 			System.out.println(us.format(price));
 		}
 		{
-			LocalDate date = LocalDate.of(2020, Month.JANUARY, 20);
-			System.out.println(date.getDayOfWeek()); // MONDAY
-			System.out.println(date.getMonth()); // JANUARY
+			LocalDate date = LocalDate.of(2020, Month.FEBRUARY, 20);
+			System.out.println(date.getDayOfWeek()); // THURSDAY
+			System.out.println(date.getMonth()); // FEBRUARY
 			System.out.println(date.getYear()); // 2020
-			System.out.println(date.getDayOfYear()); // 20
+			System.out.println(date.getDayOfYear()); // 51
+			System.out.println(date.getDayOfMonth()); // 20
 		}
 		{
 			LocalDate date = LocalDate.of(2020, Month.JANUARY, 20);
