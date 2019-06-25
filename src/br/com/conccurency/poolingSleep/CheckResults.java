@@ -1,4 +1,4 @@
-package br.com.conccurency;
+package br.com.conccurency.poolingSleep;
 
 public class CheckResults {
 	private static int counter = 0;

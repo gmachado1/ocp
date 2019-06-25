@@ -1,4 +1,4 @@
-package br.com.conccurency.synchronizing;
+package br.com.conccurency.syncronized;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
