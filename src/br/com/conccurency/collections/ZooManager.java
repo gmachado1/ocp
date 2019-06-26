@@ -1,4 +1,4 @@
-package br.com.conccurency.executerService;
+package br.com.conccurency.collections;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

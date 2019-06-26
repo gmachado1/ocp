@@ -1,4 +1,4 @@
-package br.com.conccurency;
+package br.com.conccurency.process;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

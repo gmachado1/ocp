@@ -1,4 +1,4 @@
-package br.com.conccurency;
+package br.com.conccurency.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class WhaleDataCalculator {
+public class WhaleDataParalelCalculator {
 	public int processRecord(int input) {
 		try {
 			Thread.sleep(10);
@@ -22,11 +22,11 @@ public class WhaleDataCalculator {
 	}
 
 	public void processAllData(List<Integer> data) {
-		data.stream().map(a -> processRecord(a)).count();
+		data.parallelStream().map(a -> processRecord(a)).count();
 	}
 
 	public static void main(String[] args) {
-		WhaleDataCalculator calculator = new WhaleDataCalculator();
+		WhaleDataParalelCalculator calculator = new WhaleDataParalelCalculator();
 // Define the data
 		List<Integer> data = new ArrayList<Integer>();
 		for (int i = 0; i < 4000; i++)

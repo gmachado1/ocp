@@ -1,4 +1,4 @@
-package br.com.conccurency;
+package br.com.conccurency.process;
 
 import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
