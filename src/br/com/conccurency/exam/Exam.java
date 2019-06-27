@@ -19,15 +19,15 @@ public class Exam {
 	public static void main(String[] args) {
 
 		{// TODO Entender melhor isso
-			ExecutorService service = Executors.newSingleThreadScheduledExecutor();
-			service.scheduleWithFixedDelay(new Runnable() {
-				@Override
-				public void run() {
-					System.out.println("scheduleWithFixedDelay: " + new Date());
-				}
-			}, 0, 1L, TimeUnit.MINUTES);
-			Future<?> result = service.submit(() -> System.out.println("Wake Staff")); // w3
-			System.out.println(result.get()); // w4
+			/*
+			 * ExecutorService service = Executors.newSingleThreadScheduledExecutor();
+			 * service.scheduleWithFixedDelay(new Runnable() {
+			 * 
+			 * @Override public void run() { System.out.println("scheduleWithFixedDelay: " +
+			 * new Date()); } }, 0, 1L, TimeUnit.MINUTES); Future<?> result =
+			 * service.submit(() -> System.out.println("Wake Staff")); // w3
+			 * System.out.println(result.get()); // w4
+			 */
 		}
 		{
 			AtomicLong value1 = new AtomicLong(0);
@@ -48,18 +48,23 @@ public class Exam {
 				s3.add(5); // x2
 			System.out.println(l1.size() + " " + l2.size() + " " + s3.size());
 		}
-		{
-
+		{//TODO entender porque o c1 da linha q2 é numeral e não texto
+			System.out.println(Arrays.asList("duck", "chicken", "flamingo", "pelican")
+					.parallelStream().parallel() // q1
+					.reduce(0,
+					(c1, c2) -> c1 + c2.length(), // q2
+					(s1, s2) -> s1 + s2)); // q3
 		}
 	}
 
 	public void addAndPrintItems() {
-		BlockingDeque<Integer> deque = new LinkedBlockingDeque<>(10);
-		deque.offer(103);
-		deque.offerFirst(20, 1, TimeUnit.SECONDS);
-		deque.offerLast(85, 7, TimeUnit.HOURS);
-		System.out.print(deque.pollFirst(200, TimeUnit.NANOSECONDS));
-		System.out.print(" " + deque.pollLast(1, TimeUnit.MINUTES));
+		/*
+		 * BlockingDeque<Integer> deque = new LinkedBlockingDeque<>(10);
+		 * deque.offer(103); deque.offerFirst(20, 1, TimeUnit.SECONDS);
+		 * deque.offerLast(85, 7, TimeUnit.HOURS); System.out.print(deque.pollFirst(200,
+		 * TimeUnit.NANOSECONDS)); System.out.print(" " + deque.pollLast(1,
+		 * TimeUnit.MINUTES));
+		 */
 	}
 
 }
