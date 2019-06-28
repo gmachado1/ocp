@@ -1,13 +1,14 @@
-package br.com.io;
+package br.com.io.fileobj;
 
 import java.io.File;
 
 public class ReadFileInformation {
 	public static void main(String[] args) {
-		{
-			String pathText = "/home/gustavo/git/ocp/zoo.txt";
+		 {	
+			//windows
+			String pathText = "C:\\repositorio\\git\\ocp\\zoo.txt";
 			File file = new File(pathText);
-			System.out.println("File Exists: " + file.exists());
+			System.out.println("File Exists:(Windows) " + file.exists());
 			if (file.exists()) {
 				System.out.println("Absolute Path: " + file.getAbsolutePath());
 				System.out.println("Is Directory: " + file.isDirectory());
@@ -22,9 +23,10 @@ public class ReadFileInformation {
 				}
 			}
 		}
-		{
-			System.out.println("\n\n\n Arquivo \n\n\n");
-			String simplePath = "C:\\Users\\gustavo\\projetos\\java\\eclipse-workspace\\JavaCertificationProfessionalProgrammer\\";
+		{	
+			//Linux
+			System.out.println("\n\n\n File exist(LINUX):");
+			String simplePath = "/home/gustavo/git/ocp/zoo.txt";
 			File file = new File(simplePath);
 			System.out.println("File Exists: " + file.exists());
 			if (file.exists()) {
