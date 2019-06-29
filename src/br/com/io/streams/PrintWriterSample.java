@@ -1,4 +1,4 @@
-package br.com.io;
+package br.com.io.streams;
 
 import java.io.*;
 
