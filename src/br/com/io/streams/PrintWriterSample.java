@@ -7,6 +7,7 @@ public class PrintWriterSample {
 	public static void main(String[] args) throws IOException {
 		
 		File source = new File("beach.log");
+		
 		try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(source)))) {
 			out.print("Today's weather is: ");
 			out.println("Sunny");
