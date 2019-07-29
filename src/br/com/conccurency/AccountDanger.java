@@ -9,8 +9,8 @@ public class AccountDanger implements Runnable {
 		Thread one = new Thread(r);
 		Thread two = new Thread(r);
 
-		one.setName("Hamilton");
-		two.setName("Ana");
+		one.setName(" - Hamilton: ");
+		two.setName(" - Ana: ");
 
 		one.start();
 		two.start();
